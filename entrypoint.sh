@@ -130,9 +130,9 @@ trigger_workflow() {
 
   OLD_RUNS=$(get_workflow_runs "$SINCE")
 
-  echo >&2 "Triggering workflow:"
-  echo >&2 "  workflows/${INPUT_WORKFLOW_FILE_NAME}/dispatches"
-  echo >&2 "  {\"ref\":\"${ref}\",\"inputs\":${client_payload}}"
+  echo "Triggering workflow:"
+  echo "  workflows/${INPUT_WORKFLOW_FILE_NAME}/dispatches"
+  echo "  {\"ref\":\"${ref}\",\"inputs\":${client_payload}}"
 
   api "workflows/${INPUT_WORKFLOW_FILE_NAME}/dispatches" \
     --data "{\"ref\":\"${ref}\",\"inputs\":${client_payload}}"
